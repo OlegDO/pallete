@@ -49,7 +49,7 @@ img {
     text-align: left;
     display: flex;
     flex-direction: row;
-
+    padding: 0 0px 2px 15px;
 }
 button {
     background-color: #3b6b7a;
@@ -64,8 +64,21 @@ button {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
-    height: 228px;
+    height: 230px;
     width: 246px;
+}
+.btn-tool {
+    border: gray 2px solid;
+    width: 120px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 4px;
+}
+.current-color {
+    margin-top: 10px;
+}
+.gray-color {
+    margin-bottom: 10px;
 }
 .color {
     margin: 90px 0 0 0;
