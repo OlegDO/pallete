@@ -7,11 +7,29 @@ const grayColor = '#a8a29c';
 window.state = {
     currentTool: 'none'
 };
-//Declarations for shortcuts of tools
+//Declarations for shortcuts of tools-->
 const load = document.querySelector('#load');
 const save = document.querySelector('#save');
 const head = document.querySelector('#reset');
-//Colors
+const paintBucket = document.querySelector('#paint-bucket');
+//Functions declaration-->
+const paint = function() {
+    if (window.state.currentTool === 'paint-bucket') {
+        paintBucket.classList.add('high-list');
+        $('.item').on('click', paintFig);
+    }
+};
+const paintFig = function () {
+    if (window.state.currentTool === 'paint-bucket') {
+        $(this).css('background-color', currentColor);
+    }
+};
+//Events perfomance-->
+paintBucket.addEventListener('click', function() {
+    window.state.currentTool = 'paint-bucket';
+});
+paintBucket.addEventListener('click', paint);
+//Colors-->
 //Red
 document.querySelector('#red-color').addEventListener('click', function() {
     prevColor = currentColor;
@@ -40,3 +58,4 @@ document.querySelector('#gray-color').addEventListener('click', function() {
     currentColor = grayColor;
     $('#current-container').css('background-color', currentColor);
 });
+
