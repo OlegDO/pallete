@@ -19,3 +19,24 @@ document.querySelector('#red-color').addEventListener('click', function() {
     currentColor = redColor;
     $('#current-container').css('background-color', currentColor);
 });
+//Blue
+document.querySelector('#blue-color').addEventListener('click', function() {
+    prevColor = currentColor;
+    $('#prev-container').css('background-color', prevColor);
+    currentColor = blueColor;
+    $('#current-container').css('background-color', currentColor);
+});
+//Orange
+document.querySelector('#orange-color').addEventListener('click', function() {
+    prevColor = currentColor;
+    $('#prev-container').css('background-color', prevColor);
+    currentColor = orangeColor;
+    $('#current-container').css('background-color', currentColor);
+});
+//Gray
+document.querySelector('#gray-color').addEventListener('click', function() {
+    prevColor = currentColor;
+    $('#prev-container').css('background-color', prevColor);
+    currentColor = grayColor;
+    $('#current-container').css('background-color', currentColor);
+});
