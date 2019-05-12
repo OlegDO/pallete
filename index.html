@@ -7,8 +7,8 @@
 </head>
 <body>
 <header>
-    <div class="dev-tools-container">
-        <h2 class="btn-tool">Stop tool</h2>
+    <div id="reset" class="dev-tools-container">
+        <h2 class="btn-tool">Reset tool</h2>
         <div id="save" class="dev-tools-container">
             <h2 class="btn-tool">Save state</h2>
         </div>
@@ -22,6 +22,7 @@
     </div>
 </header>
 <main>
+    <div class="redactor-items">
     <div class="tools">
         <button type="button" class="paint-bucket" id="paint-bucket">
             <img src="assets/images/icons/i1.png" alt=""><span class="">Paint bucket (p)</span>
@@ -54,6 +55,7 @@
         <button type="button" class="gray-color" id="gray-color">
             <span class="ctn gray-container"></span><span class="">gray</span>
         </button>
+    </div>
     </div>
     <div class="canvas">
         <div class="line line-0">

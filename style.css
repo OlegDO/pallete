@@ -25,10 +25,14 @@ header {
     border-radius: 30px;
 }
 header h1 {
-    width: 77%;
+    width: 80%;
 }
 img {
     margin: 0 10px;
+}
+main {
+    display: flex;
+    flex-direction: row;
 }
 .dev-tools-container, .spread {
     margin: 30px 0 0 0;
@@ -132,7 +136,7 @@ button {
     margin: 10px;
     background-color: #cacece;
     height: 236px;
-    width: 238px;
+    width: 70%;
 }
 .item-01 {
     background-color: #3b6b7a;
@@ -151,4 +155,15 @@ button {
 }
 .item-21 {
     background-color: #097a10;
+}
+button:hover {
+    cursor: pointer;
+}
+.item:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.btn-tool:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
