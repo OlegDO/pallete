@@ -12,6 +12,7 @@ const load = document.querySelector('#load');
 const save = document.querySelector('#save');
 const head = document.querySelector('#reset');
 const paintBucket = document.querySelector('#paint-bucket');
+const transform = document.querySelector('#transform');
 //Functions declaration-->
 const paint = function() {
     if (window.state.currentTool === 'paint-bucket') {
@@ -24,11 +25,34 @@ const paintFig = function () {
         $(this).css('background-color', currentColor);
     }
 };
+//Transform
+const trans = function() {
+    if (window.state.currentTool === 'transform') {
+        transform.classList.add('high-list');
+        $('.item').on('click', transFig);
+    }
+};
+const transFig = function () {
+    if (window.state.currentTool === 'transform') {
+        if ($(this).hasClass('square')) {
+            $(this).removeClass('square');
+            $(this).addClass('circle');
+        } else {
+            $(this).removeClass('circle');
+            $(this).addClass('square');
+        }
+    }
+};
 //Events perfomance-->
 paintBucket.addEventListener('click', function() {
     window.state.currentTool = 'paint-bucket';
 });
 paintBucket.addEventListener('click', paint);
+//Transform
+transform.addEventListener('click', function() {
+    window.state.currentTool = 'transform';
+});
+transform.addEventListener('click', trans);
 //Colors-->
 //Red
 document.querySelector('#red-color').addEventListener('click', function() {
