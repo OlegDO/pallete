@@ -70,3 +70,38 @@ button {
 .color {
     margin: 90px 0 0 0;
 }
+.prev-container {
+    background-color: #ffffff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 4px 10px 0 0;
+}
+.current-container {
+    background-color: #ffffff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 4px 10px 0 0;
+}
+.red-container, .blue-container, .orange-container, .gray-container {
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 4px 10px 0 0;
+}
+.blue-container {
+    background-color: #4286f4;
+}
+.red-container {
+    background-color: #e83740;
+}
+.orange-container {
+    background-color: #ed9a42;
+}
+.gray-container {
+    background-color: #a8a29c;
+}
