@@ -118,3 +118,37 @@ button {
 .gray-container {
     background-color: #a8a29c;
 }
+.canvas {
+    height: 728px;
+    width: 734px;
+}
+.line-0, .line-1, .line-2 {
+    display: flex;
+    flex-direction: row;
+}
+.item-00, .item-01, .item-02,
+.item-10, .item-11, .item-12,
+.item-20, .item-21, .item-22 {
+    margin: 10px;
+    background-color: #cacece;
+    height: 236px;
+    width: 238px;
+}
+.item-01 {
+    background-color: #3b6b7a;
+}
+.item-02 {
+    background-color: #7a2654;
+}
+.item-10 {
+    background-color: #343e7a;
+}
+.item-12 {
+    background-color: #e83740;
+}
+.item-20 {
+    background-color: #4286f4;
+}
+.item-21 {
+    background-color: #097a10;
+}
