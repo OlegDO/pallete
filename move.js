@@ -13,6 +13,7 @@ const save = document.querySelector('#save');
 const head = document.querySelector('#reset');
 const paintBucket = document.querySelector('#paint-bucket');
 const transform = document.querySelector('#transform');
+const colorPick = document.querySelector('#color-picker');
 //Functions declaration-->
 const paint = function() {
     if (window.state.currentTool === 'paint-bucket') {
@@ -43,6 +44,23 @@ const transFig = function () {
         }
     }
 };
+//Color picker
+const colorPickEl = function() {
+    if (window.state.currentTool === 'color-picker') {
+        colorPick.classList.add('high-list');
+        $('.pick').on('click', colorPickElFig);
+    }
+};
+const colorPickElFig = function() {
+    if (window.state.currentTool === 'color-picker') {
+        let color = $(this).css('background-color');
+        console.log(color);
+        prevColor = currentColor;
+        $('#prev-container').css('background-color', prevColor);
+        currentColor = color || 'none';
+        $('#current-container').css('background-color', currentColor);
+    }
+}
 //Events perfomance-->
 paintBucket.addEventListener('click', function() {
     window.state.currentTool = 'paint-bucket';
@@ -53,6 +71,11 @@ transform.addEventListener('click', function() {
     window.state.currentTool = 'transform';
 });
 transform.addEventListener('click', trans);
+//Choose Color
+colorPick.addEventListener('click', () => {
+    window.state.currentTool = 'color-picker';
+});
+colorPick.addEventListener('click', colorPickEl);
 //Colors-->
 //Red
 document.querySelector('#red-color').addEventListener('click', function() {
