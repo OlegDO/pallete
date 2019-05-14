@@ -105,4 +105,17 @@ document.querySelector('#gray-color').addEventListener('click', function() {
     currentColor = grayColor;
     $('#current-container').css('background-color', currentColor);
 });
+//Reset--->
+head.addEventListener('click', function() {
+    window.state.currentTool = 'none';
+    paintBucket.removeEventListener('click', paintFig);
+    paintBucket.classList.remove('high-list');
 
+    colorPick.removeEventListener('click', colorPickEl);
+    colorPick.classList.remove('high-list');
+
+    transform.classList.remove('high-list');
+    transform.removeEventListener('click', trans);
+    // $('.item').off('click', paint)
+    // $(window).off('click');
+});
