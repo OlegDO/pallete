@@ -54,20 +54,19 @@ const colorPickEl = function() {
 const colorPickElFig = function() {
     if (window.state.currentTool === 'color-picker') {
         let color = $(this).css('background-color');
-        console.log(color);
         prevColor = currentColor;
         $('#prev-container').css('background-color', prevColor);
         currentColor = color || 'none';
         $('#current-container').css('background-color', currentColor);
     }
-}
+};
 //Events perfomance-->
-paintBucket.addEventListener('click', function() {
+paintBucket.addEventListener('click', () => {
     window.state.currentTool = 'paint-bucket';
 });
 paintBucket.addEventListener('click', paint);
 //Transform
-transform.addEventListener('click', function() {
+transform.addEventListener('click', () => {
     window.state.currentTool = 'transform';
 });
 transform.addEventListener('click', trans);
@@ -114,10 +113,8 @@ head.addEventListener('click', function() {
     colorPick.removeEventListener('click', colorPickEl);
     colorPick.classList.remove('high-list');
 
-    transform.classList.remove('high-list');
     transform.removeEventListener('click', trans);
-    // $('.item').off('click', paint)
-    // $(window).off('click');
+    transform.classList.remove('high-list');
 });
 //Shortcuts--->
 //Paint bucket
@@ -128,7 +125,9 @@ window.addEventListener(
             window.state.currentTool = 'paint-bucket';
             paintBucket.classList.add('high-list');
             $('.item').on('click', function() {
-                $(this).css('background-color', currentColor);
+                if (window.state.currentTool === 'paint-bucket') {
+                    $(this).css('background-color', currentColor);
+                }
             });
         }
     },
@@ -140,13 +139,16 @@ window.addEventListener(
     e => {
         if (e.keyCode === 116) {
             transform.classList.add('high-list');
+            window.state.currentTool = 'transform';
             $('.item').on('click', function() {
-                if ($(this).hasClass('square')) {
-                    $(this).removeClass('square');
-                    $(this).addClass('circle');
-                } else {
-                    $(this).removeClass('circle');
-                    $(this).addClass('square');
+                if (window.state.currentTool === 'transform') {
+                    if ($(this).hasClass('square')) {
+                        $(this).removeClass('square');
+                        $(this).addClass('circle');
+                    } else {
+                        $(this).removeClass('circle');
+                        $(this).addClass('square');
+                    }
                 }
             });
         }
@@ -157,12 +159,15 @@ window.addEventListener(
 window.addEventListener('keypress', e => {
     if (e.keyCode === 99) {
         colorPick.classList.add('high-list');
+        window.state.currentTool = 'color-picker';
         $('.pick').on('click', function() {
-            let color = $(this).css('background-color');
-            prevColor = currentColor;
-            $('#prev-container').css('background-color', prevColor);
-            currentColor = color || 'none';
-            $('#current-container').css('background-color', currentColor);
+            if (window.state.currentTool === 'color-picker') {
+                let color = $(this).css('background-color');
+                prevColor = currentColor;
+                $('#prev-container').css('background-color', prevColor);
+                currentColor = color || 'none';
+                $('#current-container').css('background-color', currentColor);
+            }
         });
     }
 });
