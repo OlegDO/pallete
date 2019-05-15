@@ -120,7 +120,7 @@ head.addEventListener('click', function() {
 //Paint bucket
 window.addEventListener(
     'keypress',
-    e => {
+    function (e) {
         if (e.keyCode === 112) {
             window.state.currentTool = 'paint-bucket';
             paintBucket.classList.add('high-list');
@@ -136,10 +136,10 @@ window.addEventListener(
 //Transform
 window.addEventListener(
     'keypress',
-    e => {
+    function (e) {
         if (e.keyCode === 116) {
-            transform.classList.add('high-list');
             window.state.currentTool = 'transform';
+            transform.classList.add('high-list');
             $('.item').on('click', function() {
                 if (window.state.currentTool === 'transform') {
                     if ($(this).hasClass('square')) {
@@ -156,7 +156,7 @@ window.addEventListener(
     false
 );
 //Color picker
-window.addEventListener('keypress', e => {
+window.addEventListener('keypress', function (e) {
     if (e.keyCode === 99) {
         colorPick.classList.add('high-list');
         window.state.currentTool = 'color-picker';
