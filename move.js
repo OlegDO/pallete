@@ -134,7 +134,6 @@ window.addEventListener(
     },
     false
 );
-
 //Transform
 window.addEventListener(
     'keypress',
@@ -154,7 +153,6 @@ window.addEventListener(
     },
     false
 );
-
 //Color picker
 window.addEventListener('keypress', e => {
     if (e.keyCode === 99) {
@@ -167,4 +165,95 @@ window.addEventListener('keypress', e => {
             $('#current-container').css('background-color', currentColor);
         });
     }
+});
+//Local Storage--->
+save.addEventListener('click', () => {
+    const shapeNowItem00 = $('.item-00').attr('class');
+    const shapeNowItem01 = $('.item-01').attr('class');
+    const shapeNowItem02 = $('.item-02').attr('class');
+    const shapeNowItem10 = $('.item-10').attr('class');
+    const shapeNowItem11 = $('.item-11').attr('class');
+    const shapeNowItem12 = $('.item-12').attr('class');
+    const shapeNowItem20 = $('.item-20').attr('class');
+    const shapeNowItem21 = $('.item-21').attr('class');
+    const shapeNowItem22 = $('.item-22').attr('class');
+
+    //First line items properties
+    const colorNowItem00 = $('#item-00').css('background-color');
+    localStorage.setItem('item-00-color', JSON.stringify(colorNowItem00));
+    localStorage.setItem('item-00-shape', JSON.stringify(shapeNowItem00));
+    const colorNowItem01 = $('#item-01').css('background-color');
+    localStorage.setItem('item-01-color', JSON.stringify(colorNowItem01));
+    localStorage.setItem('item-01-shape', JSON.stringify(shapeNowItem01));
+    const colorNowItem02 = $('#item-02').css('background-color');
+    localStorage.setItem('item-02-color', JSON.stringify(colorNowItem02));
+    localStorage.setItem('item-02-shape', JSON.stringify(shapeNowItem02));
+
+    //Second line items properties
+    const colorNowItem10 = $('#item-10').css('background-color');
+    localStorage.setItem('item-10-color', JSON.stringify(colorNowItem10));
+    localStorage.setItem('item-10-shape', JSON.stringify(shapeNowItem10));
+    const colorNowItem11 = $('#item-11 ').css('background-color');
+    localStorage.setItem('item-11-color', JSON.stringify(colorNowItem11 ));
+    localStorage.setItem('item-11-shape', JSON.stringify(shapeNowItem11));
+    const colorNowItem12 = $('#item-12').css('background-color');
+    localStorage.setItem('item-12-color', JSON.stringify(colorNowItem12));
+    localStorage.setItem('item-12-shape', JSON.stringify(shapeNowItem12));
+
+    //Third line items properties
+    const colorNowItem20 = $('#item-20').css('background-color');
+    localStorage.setItem('item-20-color', JSON.stringify(colorNowItem20));
+    localStorage.setItem('item-20-shape', JSON.stringify(shapeNowItem20));
+    const colorNowItem21 = $('#item-21').css('background-color');
+    localStorage.setItem('item-21-color', JSON.stringify(colorNowItem21));
+    localStorage.setItem('item-21-shape', JSON.stringify(shapeNowItem21));
+    const colorNowItem22 = $('#item-22').css('background-color');
+    localStorage.setItem('item-22-color', JSON.stringify(colorNowItem22));
+    localStorage.setItem('item-22-shape', JSON.stringify(shapeNowItem22));
+});
+
+load.addEventListener('click', () => {
+    //Color
+    const getColorItem00 = JSON.parse(localStorage.getItem('item-00-color'));
+    $('#item-00').css('background-color', getColorItem00);
+    const getColorItem01 = JSON.parse(localStorage.getItem('item-01-color'));
+    $('#item-01').css('background-color', getColorItem01);
+    const getColorItem02= JSON.parse(localStorage.getItem('item-02-color'));
+    $('#item-02').css('background-color', getColorItem02);
+
+    const getColorItem10 = JSON.parse(localStorage.getItem('item-10-color'));
+    $('#item-10').css('background-color', getColorItem10);
+    const getColorItem11 = JSON.parse(localStorage.getItem('item-11-color'));
+    $('#item-11').css('background-color', getColorItem11);
+    const getColorItem12 = JSON.parse(localStorage.getItem('item-12-color'));
+    $('#item-12').css('background-color', getColorItem12);
+
+    const getColorItem20 = JSON.parse(localStorage.getItem('item-20 -color'));
+    $('#item-20 ').css('background-color', getColorItem20 );
+    const getColorItem21 = JSON.parse(localStorage.getItem('item-21-color'));
+    $('#item-21').css('background-color', getColorItem21);
+    const getColorItem22 = JSON.parse(localStorage.getItem('item-22-color'));
+    $('#item-22').css('background-color', getColorItem22);
+
+    //Shape
+    const getShapeItem00 = JSON.parse(localStorage.getItem('item-00-shape'));
+    $('.item-00').attr('class', getShapeItem00 );
+    const getShapeItem01 = JSON.parse(localStorage.getItem('item-01-shape'));
+    $('.item-01').attr('class', getShapeItem01 );
+    const getShapeItem02 = JSON.parse(localStorage.getItem('item-02-shape'));
+    $('.item-02').attr('class', getShapeItem02 );
+
+    const getShapeItem20 = JSON.parse(localStorage.getItem('item-20-shape'));
+    $('.item-20').attr('class', getShapeItem20 );
+    const getShapeItem21 = JSON.parse(localStorage.getItem('item-21-shape'));
+    $('.item-21').attr('class', getShapeItem21 );
+    const getShapeItem22 = JSON.parse(localStorage.getItem('item-22-shape'));
+    $('.item-22').attr('class', getShapeItem22 );
+
+    const getShapeItem10 = JSON.parse(localStorage.getItem('item-10-shape'));
+    $('.item-10').attr('class', getShapeItem10 );
+    const getShapeItem11 = JSON.parse(localStorage.getItem('item-11-shape'));
+    $('.item-11').attr('class', getShapeItem11 );
+    const getShapeItem12 = JSON.parse(localStorage.getItem('item-12-shape'));
+    $('.item-12 ').attr('class', getShapeItem12  );
 });
