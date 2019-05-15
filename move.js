@@ -119,3 +119,52 @@ head.addEventListener('click', function() {
     // $('.item').off('click', paint)
     // $(window).off('click');
 });
+//Shortcuts--->
+//Paint bucket
+window.addEventListener(
+    'keypress',
+    e => {
+        if (e.keyCode === 112) {
+            window.state.currentTool = 'paint-bucket';
+            paintBucket.classList.add('high-list');
+            $('.item').on('click', function() {
+                $(this).css('background-color', currentColor);
+            });
+        }
+    },
+    false
+);
+
+//Transform
+window.addEventListener(
+    'keypress',
+    e => {
+        if (e.keyCode === 116) {
+            transform.classList.add('high-list');
+            $('.item').on('click', function() {
+                if ($(this).hasClass('square')) {
+                    $(this).removeClass('square');
+                    $(this).addClass('circle');
+                } else {
+                    $(this).removeClass('circle');
+                    $(this).addClass('square');
+                }
+            });
+        }
+    },
+    false
+);
+
+//Color picker
+window.addEventListener('keypress', e => {
+    if (e.keyCode === 99) {
+        colorPick.classList.add('high-list');
+        $('.pick').on('click', function() {
+            let color = $(this).css('background-color');
+            prevColor = currentColor;
+            $('#prev-container').css('background-color', prevColor);
+            currentColor = color || 'none';
+            $('#current-container').css('background-color', currentColor);
+        });
+    }
+});
