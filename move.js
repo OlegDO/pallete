@@ -1,4 +1,4 @@
-let currentColor = '#ffffff';
+let currentColor = '#1c1b1b';
 let prevColor = '#ffffff';
 const redColor = '#e83740';
 const blueColor = '#4286f4';
